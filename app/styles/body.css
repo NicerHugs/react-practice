@@ -4,3 +4,16 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+
+.filterable-product-table {
+  max-width: 200px;
+  margin: 20px auto;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.out-of-stock {
+  color: red;
+}

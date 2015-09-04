@@ -12,7 +12,7 @@ var babel = require('gulp-babel');
 // =============================================================================
 
 // build the tmp folder that is where things are actually served from in development
-gulp.task('tmp', ['vendor', 'css', 'js']);
+gulp.task('tmp', ['vendor', 'css', 'js', 'json']);
 
   gulp.task('clean', function(cb) {
     return del(['tmp']);
@@ -41,6 +41,12 @@ gulp.task('tmp', ['vendor', 'css', 'js']);
       .pipe(useref())
       .pipe(gulp.dest('tmp'));
   });
+
+  //compile json
+  gulp.task('json', ['vendor'], function() {
+    gulp.src('app/json/**/*.json')
+      .pipe(gulp.dest('tmp/json'));
+  })
 
 // make watch task that watches src code and compiles it into tmp
 gulp.task('watch', function() {
